@@ -8,19 +8,22 @@
 </head>
 <body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-	<span id ="counter" class="background-color: green;">60</span>
-	<script>var counter = 60;
-	setInterval(function(){
-		for (var i = counter; i > 0; i--) {
-			$("#counter").html(i);
-		};
+	<span id ="counter" style="background-color: green;">60</span>
+	<script>
+	var counter = 60;
 
-		if(counter == 0){
+	setInterval(function(){
+
+		if (counter > 0){
+			counter--;
+			$("#counter").html(counter);
+		}
+
+		if (counter == 0){
 			$("#counter").css("background-color", "red");
 			$("#counter").toggle();
 		}
-
-	});
+		}, 1000)
 </script>
 </body>
 </html>
